@@ -3,7 +3,22 @@ import { Login } from './pages/login/login';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: Login,
   },
+  {
+    path: 'dashboard',
+    component: Login,
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+
 ];

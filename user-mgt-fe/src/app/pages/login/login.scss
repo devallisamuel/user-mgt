@@ -1,0 +1,64 @@
+@mixin login-reusable {
+    width: 50%;
+    height:100%;
+  }
+
+  $spacing: 20px;
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+    align-items: center;
+  .login-banner {
+    background-image: url("../../assets/images/login-banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include login-reusable;
+  }
+
+  .login-form {
+    @include login-reusable;
+    padding:20px
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 10px;
+
+    .login-text {
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        margin-top: 4rem;
+   }
+
+   .login-fields {
+     margin-top: $spacing;
+     width: 80%;
+     margin: 0 auto;
+   }
+
+   mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    width:100%;
+    margin-top: 20px;
+  }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .login-banner {
+        display: none;
+    }
+    .login-form {
+        width: 60%;
+        height:100%;
+        margin: 0 auto;
+
+    }
+  }
+}

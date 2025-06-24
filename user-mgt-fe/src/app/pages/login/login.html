@@ -1,4 +1,24 @@
-<section>
-  <div>Banner img</div>
-  <div></div>
+<section class="wrapper">
+  <div class="login-banner"></div>
+  <div class="login-form">
+    <form #loginForm = "ngForm" (ngSubmit) = "loginUser(loginForm)">
+      <p class="login-text">Login</p>
+      <div class="login-fields">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput required [(ngModel)] = "loginDetails.username" />
+        </mat-form-field>
+      </div>
+
+      <div class="login-fields">
+        <mat-form-field >
+          <mat-label>Password</mat-label>
+          <input matInput required [type]="visibility() ? 'text' : 'password'" [(ngModel)] = "loginDetails.password" />
+        </mat-form-field>
+      </div>
+      <div class="login-fields">
+          <button matButton="filled" class = ''>Submit</button>
+      </div>
+    </form>
+  </div>
 </section>
