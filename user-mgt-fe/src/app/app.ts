@@ -10,5 +10,4 @@ import { SharedModule } from './shared/shared-module';
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'user-mgt-fe';
 }

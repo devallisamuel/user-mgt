@@ -1,25 +1,27 @@
 import { Component, signal } from '@angular/core';
-import { SharedModule } from '../../shared/shared-module';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
+import { SharedModule } from '../../shared/shared-module';
+import { ILoginModel } from '../../core/models/login.model';
+
+
 @Component({
   selector: 'app-login',
-  imports: [...SharedModule, FormsModule,],
+  imports: [...SharedModule, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
 export class Login {
-  loginDetails = {
-    username:"",
-    password:""
-  }
+  loginDetails: ILoginModel = {
+    username: '',
+    password: '',
+  };
 
   visibility = signal(false);
 
-  constructor(private router:Router) {
-
-  }
+  constructor(private router: Router) {}
 
   toggleVisibility() {
     return this.visibility.set(!this.visibility());
@@ -27,6 +29,6 @@ export class Login {
 
   loginUser(credentials: NgForm) {
     console.log(credentials.value);
-    this.router.navigate(["/dashboard"]);
+    this.router.navigate(['/dashboard']);
   }
 }
